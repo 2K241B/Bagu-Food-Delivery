@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SvgPinecone } from "./ui/assets/Svgs";
+import { SvgPinecone, SvgSearch } from "./ui/assets/Svgs";
 
 export const Navbar = () => {
   return (
@@ -12,7 +12,16 @@ export const Navbar = () => {
           <Link href="">ХООЛНЫ ЦЭС</Link>
           <Link href="">ХҮРГЭЛТИЙН БҮС</Link>
         </div>
-        <div>2</div>
+        <div className="flex gap-2">
+          <div>
+            <button>
+              <SvgSearch />
+            </button>
+            <input placeholder="Хайх"></input>
+          </div>
+          <Link href="">Сагс</Link>
+          <Link href="">Нэвтрэх</Link>
+        </div>
       </div>
     </div>
   );
