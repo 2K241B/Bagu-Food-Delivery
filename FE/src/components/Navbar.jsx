@@ -7,10 +7,11 @@ export const Navbar = () => {
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-6">
           <SvgPinecone />
-
-          <Link href="">НҮҮР</Link>
-          <Link href="">ХООЛНЫ ЦЭС</Link>
-          <Link href="">ХҮРГЭЛТИЙН БҮС</Link>
+          <div className="flex items-start gap-2">
+            <Link href="">НҮҮР</Link>
+            <Link href="">ХООЛНЫ ЦЭС</Link>
+            <Link href="">ХҮРГЭЛТИЙН БҮС</Link>
+          </div>
         </div>
         <div className="flex gap-2">
           <div className="flex w-[260px] items-start gap-2 px-2 py-4 border-[1px] rounded-lg border-solid">
