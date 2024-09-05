@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   createUser,
+  deleteUser,
   getUpdateUser,
   getUserById,
   getUsers,
@@ -12,5 +13,6 @@ user
   .post("/create", createUser)
   .get("/getUsers", getUsers)
   .get("/:id", getUserById)
-  .put("/:id", getUpdateUser);
+  .put("/:id", getUpdateUser)
+  .delete("/:id", deleteUser);
 export { user };
