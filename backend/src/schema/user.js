@@ -17,7 +17,7 @@ const UserSchema = {
   },
   phonenumber: {
     type: String,
-    required: [true, "Password is required"],
+    // required: [true, "Password is required"],
   },
   role: {
     type: String,
