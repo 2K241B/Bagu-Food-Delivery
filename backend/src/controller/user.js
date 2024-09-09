@@ -11,11 +11,11 @@ export const createUser = async (req, res) => {
     const response = await userModel.create({
       email,
       name,
-      password,
+      password: hash,
       phoneNumber,
       role,
     });
-    res.status(200).json(response);
+    res.status(200).send(response);
   } catch (error) {
     console.error(error);
     res.status(500).send(error.message);
