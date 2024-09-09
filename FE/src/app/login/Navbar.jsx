@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { SvgBag, SvgPinecone, SvgSearch, SvgLogin } from "./ui/assets/Svgs";
+import {
+  SvgBag,
+  SvgPinecone,
+  SvgSearch,
+  SvgLogin,
+} from "../../components/ui/assets/Svgs";
 
 export const Navbar = () => {
   return (
