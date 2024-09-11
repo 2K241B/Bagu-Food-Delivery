@@ -13,12 +13,18 @@ export const Login = () => {
         <div className="flex w-[384px] flex-col items-start gap-2">
           <div className="flex flex-col items-start gap-[1px] self-stretch">
             <p>Имэйл</p>
-            <Input placeholder="Имэйл хаягаа оруулна уу" />
+            <Input
+              className="border-solid bg-[#ECEDF0]"
+              placeholder="Имэйл хаягаа оруулна уу"
+            />
           </div>
-          <div className="flex flex-col px-2 py-4 justify-between items-start self-stretch">
+          <div className="flex flex-col py-4 justify-between items-start self-stretch">
             <p>Нууц үг</p>
-            <div className="flex items-center">
-              <Input placeholder="Нууц үг" />
+            <div className="flex items-center w-full bg-[#ECEDF0] rounded-[4px] px-0">
+              <Input
+                className="border-solid bg-[#ECEDF0] w-full"
+                placeholder="Нууц үг"
+              />
               <SvgEye />
             </div>
           </div>
