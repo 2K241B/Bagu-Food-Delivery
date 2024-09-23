@@ -1,7 +1,9 @@
+"use client";
 import { SvgNextMark, SvgToggleLeft, SvgXmark } from "./ui/assets/Svgs";
 import { Input } from "@/components/ui/input";
 import { Switch } from "./ui/switch";
 import { Button } from "./ui/button";
+import { CldUploadWidget } from "next-cloudinary";
 
 export const CreateFood = () => {
   return (
@@ -39,6 +41,11 @@ export const CreateFood = () => {
         <Input className="bg-[#F4F4F4]" placeholder="Placeholder" />
         <label className="text-sm font-medium">Хоолны зураг</label>
       </div>
+      <CldUploadWidget uploadPreset="ImageData">
+        {({ open }) => {
+          return <button onClick={() => open()}>Add Image</button>;
+        }}
+      </CldUploadWidget>
       <div className="flex p-6 justify-end items-center gap-4 self-stretch">
         <Button>Clear</Button>
         <Button>Continue</Button>
