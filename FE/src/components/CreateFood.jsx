@@ -4,8 +4,20 @@ import { Input } from "@/components/ui/input";
 import { Switch } from "./ui/switch";
 import { Button } from "./ui/button";
 import { CldUploadWidget } from "next-cloudinary";
+import { CldImage } from "next-cloudinary";
+import { CldUploadButton } from "next-cloudinary";
+import { useState } from "react";
 
 export const CreateFood = () => {
+  const [image, setImage] = useState();
+
+  const handleOnSuccess = (response) => {
+    setImage(response.info.public_id);
+    console.log(response);
+  };
+
+  console.log(image);
+
   return (
     <div className="flex w-[587px] flex-col items-start">
       <div className="flex px-6 py-4 justify-between items-center self-stretch">
@@ -41,11 +53,17 @@ export const CreateFood = () => {
         <Input className="bg-[#F4F4F4]" placeholder="Placeholder" />
         <label className="text-sm font-medium">Хоолны зураг</label>
       </div>
-      <CldUploadWidget uploadPreset="ImageData">
-        {({ open }) => {
-          return <button onClick={() => open()}>Add Image</button>;
+      <CldImage
+        src={image} // Use this sample image or upload your own via the Media Explorer
+        width="500" // Transform the image: auto-crop to square aspect_ratio
+        height="500"
+        alt="sd"
+        crop={{
+          type: "auto",
+          source: true,
         }}
-      </CldUploadWidget>
+      />
+      <CldUploadButton onSuccess={handleOnSuccess} uploadPreset="ImageData" />
       <div className="flex p-6 justify-end items-center gap-4 self-stretch">
         <Button>Clear</Button>
         <Button>Continue</Button>
